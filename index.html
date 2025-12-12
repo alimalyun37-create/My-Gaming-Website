@@ -1,329 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mohammed Amin - Professional Gamer</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* --------------------
-   BASE STYLES
-   -------------------- */
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Slightly more modern font */
-  margin: 0;
-  background-color: #f4f4f4; /* Light background for the overall page */
-  color: #333; /* Default text color */
-}
-
-a {
-  text-decoration: none; /* Remove underline from all links */
-  color: inherit; /* Inherit color unless specified otherwise */
-}
-
-/* --------------------
-   HEADER
-   -------------------- */
-.header {
-  padding: 80px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #1E90FF, #00BFFF); /* Gradient background */
-  color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.header h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-.header p {
-  font-size: 20px;
-  opacity: 0.9;
-}
-
-/* --------------------
-   NAVIGATION BAR
-   -------------------- */
-.navbar {
-  overflow: hidden;
-  background-color: #222; /* Darker bar for contrast */
-  position: sticky; /* Sticky navigation */
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 18px 25px; /* Increased padding */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
-  font-weight: bold;
-}
-
-.navbar a.right {
-  float: right;
-}
-
-/* Hover state */
-.navbar a:hover {
-  background-color: #1E90FF; /* Use main color on hover */
-  color: white;
-}
-
-/* Active/Current section link styling (optional) */
-.navbar a.active {
-  background-color: #00BFFF;
-}
-
-/* --------------------
-   MAIN LAYOUT (ROW)
-   -------------------- */
-.row {  
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px; /* Max width to center content on large screens */
-  margin: 20px auto; /* Center the container and add spacing */
-  background-color: white; /* Content background */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* Soft container shadow */
-  border-radius: 8px;
-  overflow: hidden; /* Important for containing floated elements if used */
-}
-
-/* Sidebar/left column */
-.side {
-  flex: 30%;
-  background-color: #f9f9f9; /* Lighter sidebar */
-  padding: 30px; /* Increased padding */
-  border-right: 1px solid #eee; /* Separator */
-}
-
-/* Main column */
-.main {   
-  flex: 70%;
-  padding: 30px;
-}
-
-/* Section Headings */
-.side h2, .main h2 {
-  color: #1E90FF;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 10px;
-  margin-top: 0;
-}
-
-.side h3 {
-  color: #444;
-  margin-top: 25px;
-}
-
-.main h5, .side h5 {
-  color: #888;
-  font-style: italic;
-  margin: 5px 0 15px 0;
-}
-
-/* --------------------
-   IMAGE STYLES
-   -------------------- */
-.fakeimg {
-  background-color: #eee; /* Light background */
-  width: 100%;
-  padding: 0; /* Removed padding since content now controls size */
-  margin-bottom: 20px;
-  border-radius: 6px;
-  overflow: hidden; /* Contains the image */
-}
-
-.fakeimg img {
-  display: block; /* Removes any default bottom spacing */
-}
-
-/* --------------------
-   FOOTER
-   -------------------- */
-.footer {
-  background-color: #333; /* Darker footer */
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-  margin-top: 20px;
-  border-top: 5px solid #1E90FF; /* Highlight color */
-}
-
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.footer-section {
-  padding: 15px;
-  flex: 1;
-  min-width: 180px; /* Ensure sections don't get too narrow */
-}
-
-.footer-section h3 {
-  color: #00BFFF;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #555;
-  padding-bottom: 5px;
-}
-
-.footer-section a, .footer-section p {
-  display: block;
-  color: #ccc;
-  margin-bottom: 8px;
-  transition: color 0.3s;
-}
-
-.footer-section a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.footer-copyright {
-  flex-basis: 100%; /* Make copyright section take full width */
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #555;
-}
-
-.back-to-top {
-  font-weight: bold;
-}
-
-/* --------------------
-   RESPONSIVENESS
-   -------------------- */
-@media screen and (max-width: 768px) { /* Changed breakpoint for better tablet support */
-  .row {   
-    flex-direction: column;
-    margin: 10px;
-  }
-  
-  .side, .main {
-    flex: 100%;
-    padding: 20px;
-    border-right: none;
-  }
-  
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-section {
-    border-bottom: 1px solid #555;
-    margin-bottom: 10px;
-  }
-  .footer-section:last-of-type {
-    border-bottom: none;
-  }
-  .footer-section h3 {
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-    text-align: left;
-  }
-  .navbar a.right {
-    float: none;
-  }
-  .header h1 {
-    font-size: 36px;
-  }
-}
-</style>
+    <title>Mohammed Amin - Professional Gamer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="header">
-  <h1>Mohammed Amin</h1>
-  <p>Professional Gamer & Content Enthusiast</p> </div>
+  <h1>Mohammed Amin</h1>
+  <p>Professional Gamer & Content Enthusiast | <span id="live-time">Loading Time...</span></p> 
+</div>
 
 <div class="navbar">
-  <a href="#fortnite" class="active">Fortnite</a> 
-  <a href="#roblox">Roblox</a>
-  <a href="#minecraft">Minecraft</a>
-  <a href="#fc26" class="right">About Me</a> 
+  <a href="#" onclick="openGame(event, 'fortnite')" class="active">Fortnite</a> 
+  <a href="#" onclick="openGame(event, 'roblox')">Roblox</a>
+  <a href="#" onclick="openGame(event, 'minecraft')">Minecraft</a>
+  <a href="#fc26" onclick="showAbout(event)" class="right">About Me</a> 
 </div>
 
 <div class="row">
-  <div class="side">
-    <h2 id="fortnite">Fortnite</h2>
-    <h5>Current Status: Active Player</h5>
-    <div class="fakeimg" style="height:200px;">
-      <img src="fortnite.jpg" alt="A ninja illustration or photo representing Fortnite" style="width:100%; height:100%; object-fit: cover;">
-    </div>
-    <p>Fortnite is a globally popular, free-to-play online video game known primarily for its Battle Royale mode, where 100 players compete to be the last one standing. It features constant updates, collaborative events, and a unique building mechanic that sets it apart.</p>
-    
-    <h3 id="roblox">Roblox</h3>
-    <h5>Favorite Games: Steal a brainrot, Brookhaven, Plants vs Brainrots</h5>
-    <div class="fakeimg" style="height:450px;">
-      <img src="roblox.jpg" alt="Roblox game scene" style="width:100%; height:100%; object-fit: cover;">
-    </div>
-    <p>Roblox is more than a game—it's a platform hosting millions of user-created experiences, from immersive roleplay and survival games to challenging tycoons. The concept of "Admin Abuse" is a fun element in some games, where owners give out powerful items for unique scenarios.</p>
-  </div>
-  
-  <div class="main">
-    <h2 id="fc26">FC26 & Gaming Life</h2>
-    <h5>Gamer Tag: Mainstreamrake116</h5>
-    <div class="fakeimg" style="height:450px;">
-      <img src="fc26.jpg" alt="FC 26 logo" style="width:100%; height:100%; object-fit: cover;">
-    </div>
-    <p>My passion lies in games like Roblox (especially Steal a brainrot) and Fortnite. My current goal in Steal a brainrot is to acquire the coveted strawberry elephant! I actively play other Roblox titles such as Brookhaven, Plants vs Brainrots, and Ink Game.</p>
-    <p>I draw inspiration and entertainment from top creators like Caylus and Foltyn, always looking for new strategies and content ideas.</p>
-    
-    <h2 id="minecraft">Minecraft Exploration</h2>
-    <h5>Platform: PC/Console - A Builder's Dream</h5>
-    <div class="fakeimg" style="height:200px;">
-      <img src="minecraft.jpg" alt="A scene from the game Minecraft" style="width:100%; height:100%; object-fit: cover;">
-    </div>
-    <p>Minecraft is the ultimate sandbox experience. You start from nothing, collecting resources and crafting tools to survive and build anything you can imagine. Whether exploring vast worlds in Survival Mode or creating masterpieces in Creative Mode, it's a game enjoyed by millions globally for its endless possibilities.</p>
-  </div>
+  
+    <div class="side" id="about-me-section">
+    <h2 id="fc26">FC26 & Gaming Life</h2>
+    <h5>Gamer Tag: Mainstreamrake116</h5>
+    
+        <div class="stat-box">
+      <span class="stat-label">Strawberry Elephant Goal Progress:</span>
+      <span id="brainrot-count" class="stat-number" data-target="92">0</span>%
+    </div>
+    
+    <div class="fakeimg" style="height:250px;">
+      <img src="image/fc26.jpg" alt="FC 26 logo" style="width:100%; height:100%; object-fit: cover;">
+    </div>
+    <p>My passion lies in games like Roblox (especially Steal a brainrot) and Fortnite. My current goal in Steal a brainrot is to acquire the coveted strawberry elephant! I actively play other Roblox titles such as Brookhaven, Plants vs Brainrots, and Ink Game.</p>
+    <p>I draw inspiration and entertainment from top creators like Caylus and Foltyn, always looking for new strategies and content ideas.</p>
+  </div>
+  
+    <div class="main" id="game-tabs-container">
+    
+        <div id="fortnite-content" class="tab-content game-content">
+      <h2 id="fortnite">Fortnite</h2>
+      <h5>Current Status: Active Player</h5>
+      <div class="fakeimg" style="height:200px;">
+        <img src="image/fortnite.jpg" alt="A ninja illustration or photo representing Fortnite" style="width:100%; height:100%; object-fit: cover;">
+      </div>
+      <p>Fortnite is a globally popular, free-to-play online video game known primarily for its Battle Royale mode, where 100 players compete to be the last one standing. It features constant updates, collaborative events, and a unique building mechanic that sets it apart.</p>
+    </div>
+
+        <div id="roblox-content" class="tab-content game-content" style="display:none;">
+      <h2 id="roblox">Roblox</h2>
+      <h5>Favorite Games: Steal a brainrot, Brookhaven, Plants vs Brainrots</h5>
+      <div class="fakeimg" style="height:450px;">
+        <img src="image/roblox.jpg" alt="Roblox game scene" style="width:100%; height:100%; object-fit: cover;">
+      </div>
+      <p>Roblox is more than a game—it's a platform hosting millions of user-created experiences, from immersive roleplay and survival games to challenging tycoons. The concept of "Admin Abuse" is a fun element in some games, where owners give out powerful items for unique scenarios.</p>
+    </div>
+    
+        <div id="minecraft-content" class="tab-content game-content" style="display:none;">
+      <h2 id="minecraft">Minecraft Exploration</h2>
+      <h5>Platform: PC/Console - A Builder's Dream</h5>
+      <div class="fakeimg" style="height:200px;">
+        <img src="image/minecraft.jpg" alt="A scene from the game Minecraft" style="width:100%; height:100%; object-fit: cover;">
+      </div>
+      <p>Minecraft is the ultimate sandbox experience. You start from nothing, collecting resources and crafting tools to survive and build anything you can imagine. Whether exploring vast worlds in Survival Mode or creating masterpieces in Creative Mode, it's a game enjoyed by millions globally for its endless possibilities.</p>
+    </div>
+  </div>
 </div>
 
 <div class="footer">
-    <div class="footer-content">
-        <div class="footer-section footer-nav">
-            <h3>Game Sections</h3>
-            <a href="#fortnite">Fortnite</a>
-            <a href="#roblox">Roblox</a>
-            <a href="#minecraft">Minecraft</a>
-            <a href="#fc26">FC26 / About Me</a>
-        </div>
-        <div class="footer-section footer-social">
-            <h3>Connect & Watch</h3>
-            <a href="https://www.youtube.com/@Caylus" target="_blank" rel="noopener noreferrer">YouTube (Caylus)</a>
-            <a href="https://www.twitch.tv/foltyn" target="_blank" rel="noopener noreferrer">Twitch (Foltyn)</a>
-            <p>Email: amin.gamer@gmail.com</p>
-        </div>
-        <div class="footer-section footer-copyright">
-            <p>&copy; 2025 Mohammed Amin. All rights reserved.</p>
-            <p><a href="#" class="back-to-top">Back to Top ⬆</a></p>
-        </div>
-    </div>
+    <div class="footer-content">
+        <div class="footer-section footer-nav">
+            <h3>Game Sections</h3>
+            <a href="#" onclick="openGame(event, 'fortnite')">Fortnite</a>
+            <a href="#" onclick="openGame(event, 'roblox')">Roblox</a>
+            <a href="#" onclick="openGame(event, 'minecraft')">Minecraft</a>
+            <a href="#fc26" onclick="showAbout(event)">FC26 / About Me</a>
+        </div>
+        <div class="footer-section footer-social">
+            <h3>Connect & Watch</h3>
+            <a href="https://www.youtube.com/@Caylus" target="_blank" rel="noopener noreferrer">YouTube (Caylus)</a>
+            <a href="https://www.twitch.tv/foltyn" target="_blank" rel="noopener noreferrer">Twitch (Foltyn)</a>
+            <p>Email: amin.gamer@gmail.com</p>
+        </div>
+        <div class="footer-section footer-copyright">
+            <p>&copy; 2025 Mohammed Amin. All rights reserved.</p>
+            <p><a href="#" class="back-to-top">Back to Top ⬆</a></p>
+        </div>
+    </div>
 </div>
 
+<!-- link the external Js file here -->
+ <script src="script.js"></script>
 </body>
 </html>

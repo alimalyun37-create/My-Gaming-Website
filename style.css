@@ -1,0 +1,282 @@
+    <style>
+        /* --------------------
+           BASE STYLES
+           -------------------- */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --------------------
+           HEADER
+           -------------------- */
+        .header {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #1E90FF, #00BFFF);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        /* --------------------
+           NAVIGATION BAR
+           -------------------- */
+        .navbar {
+            overflow: hidden;
+            background-color: #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 18px 25px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+            cursor: pointer; /* Indicate links are interactive */
+        }
+
+        .navbar a.right {
+            float: right;
+        }
+
+        /* Hover state */
+        .navbar a:hover {
+            background-color: #1E90FF;
+            color: white;
+        }
+
+        /* Active/Current section link styling (applied by JS) */
+        .navbar a.active {
+            background-color: #00BFFF;
+        }
+
+        /* --------------------
+           MAIN LAYOUT (ROW)
+           -------------------- */
+        .row {  
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden; 
+        }
+
+        /* Sidebar/left column (Fixed About Me/Stats) */
+        .side {
+            flex: 30%;
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-right: 1px solid #eee;
+        }
+
+        /* Main column (Game Tabs) */
+        .main {   
+            flex: 70%;
+            padding: 30px;
+        }
+
+        /* Section Headings */
+        .side h2, .main h2 {
+            color: #1E90FF;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .side h3 {
+            color: #444;
+            margin-top: 25px;
+        }
+
+        .main h5, .side h5 {
+            color: #888;
+            font-style: italic;
+            margin: 5px 0 15px 0;
+        }
+
+        /* --------------------
+           STATS COUNTER STYLE
+           -------------------- */
+        .stat-box {
+            background-color: #e0f7fa;
+            border-left: 5px solid #00BFFF;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            color: #1E90FF;
+            font-weight: 900;
+        }
+
+        /* --------------------
+           IMAGE STYLES
+           -------------------- */
+        .fakeimg {
+            background-color: #eee; 
+            width: 100%;
+            padding: 0; 
+            margin-bottom: 20px;
+            border-radius: 6px;
+            overflow: hidden; 
+        }
+
+        .fakeimg img {
+            display: block; 
+        }
+
+        /* --------------------
+           FOOTER
+           -------------------- */
+        .footer {
+            background-color: #333; 
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-top: 5px solid #1E90FF; 
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .footer-section {
+            padding: 15px;
+            flex: 1;
+            min-width: 180px; 
+        }
+
+        .footer-section h3 {
+            color: #00BFFF;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #555;
+            padding-bottom: 5px;
+        }
+
+        .footer-section a, .footer-section p {
+            display: block;
+            color: #ccc;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer-copyright {
+            flex-basis: 100%; 
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #555;
+        }
+
+        .back-to-top {
+            font-weight: bold;
+        }
+
+        /* --------------------
+           RESPONSIVENESS
+           -------------------- */
+        @media screen and (max-width: 768px) {
+            .row {   
+                flex-direction: column;
+                margin: 10px;
+            }
+            
+            .side, .main {
+                flex: 100%;
+                padding: 20px;
+                border-right: none;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-section {
+                border-bottom: 1px solid #555;
+                margin-bottom: 10px;
+            }
+            .footer-section:last-of-type {
+                border-bottom: none;
+            }
+            .footer-section h3 {
+                text-align: center;
+            }
+            /* Adjust stat box on small screens */
+            .stat-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+                text-align: left;
+            }
+            .navbar a.right {
+                float: none;
+            }
+            .header h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
