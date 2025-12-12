@@ -1,4 +1,4 @@
-# 🎮 Mohammed Amin - Professional Gamer Portfolio
+# 🎮 Professional Gamer Portfolio
 
 This repository contains the source code for the personal portfolio website of **Mohammed Amin**, a professional gamer and content enthusiast. The site showcases his primary gaming interests, favorite Roblox games, and inspirations from top creators.
 
